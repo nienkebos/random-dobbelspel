@@ -1,14 +1,25 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+
+// Actions
 import signOut from './actions/sign-out-user'
+
+// Components/containers
 import SignInOrUp from './containers/SignInOrUp'
 import Loader from './components/Loader'
+
+// Material UI Components
 import FlatButton from 'material-ui/FlatButton'
+
+
 
 class App extends Component {
   signOut() {
     this.props.signOut()
   }
+
+
+  // TODO: if signed-in renderGame()
 
   render() {
     const { loading, authenticated, currentUser } = this.props
