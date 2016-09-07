@@ -1,10 +1,14 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+
+// Material UI Components
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField'
 import RaisedButton from 'material-ui/RaisedButton'
 import FlatButton from 'material-ui/FlatButton'
 import headerStyle from '../styles/headers'
+
+// Actions
 import registerUser from '../actions/register-user'
 import authenticateUser from '../actions/authenticate-user'
 import setFormErrors from '../actions/set-form-errors'

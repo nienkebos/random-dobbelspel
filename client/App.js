@@ -1,9 +1,18 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+
+// Actions
 import signOut from './actions/sign-out-user'
+
+// Components/containers
+import Game from './containers/Game'
 import SignInOrUp from './containers/SignInOrUp'
 import Loader from './components/Loader'
+
+// Material UI Components
 import FlatButton from 'material-ui/FlatButton'
+
+
 
 class App extends Component {
   signOut() {
@@ -11,7 +20,7 @@ class App extends Component {
   }
 
   render() {
-    const { loading, authenticated, currentUser } = this.props
+    const { loading, authenticated, currentUser, dice } = this.props
 
     return(
       <div>
@@ -19,6 +28,9 @@ class App extends Component {
         { authenticated ?
           (<div>
             <h1>Hi, { currentUser.name }!</h1>
+            <div>
+              <Game />
+            </div>
             <p>
               <FlatButton
                 onClick={ this.signOut.bind(this) }

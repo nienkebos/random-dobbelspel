@@ -1,16 +1,15 @@
 'use strict';
 
 // game-model.js - A mongoose model
-// 
+//
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const cardSchema = new Schema({
-  symbol: { type: String, required: true },
-  flipped: { type: Boolean, required: true, 'default': false },
+const diceSchema = new Schema({
+  eyes: { type: String, required: true },
 });
 
 const playerSchema = new Schema({
@@ -20,7 +19,7 @@ const playerSchema = new Schema({
 });
 
 const gameSchema = new Schema({
-  cards: [cardSchema],
+  dice: [diceSchema],
   players: [playerSchema],
   started: { type: Boolean, required: true, 'default': false },
   winner: { type: Number, required: false },
