@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import signOut from './actions/sign-out-user'
 
 // Components/containers
+import Game from './containers/Game'
 import SignInOrUp from './containers/SignInOrUp'
 import Loader from './components/Loader'
 
@@ -18,11 +19,8 @@ class App extends Component {
     this.props.signOut()
   }
 
-
-  // TODO: if signed-in renderGame()
-
   render() {
-    const { loading, authenticated, currentUser } = this.props
+    const { loading, authenticated, currentUser, dice } = this.props
 
     return(
       <div>
@@ -30,6 +28,9 @@ class App extends Component {
         { authenticated ?
           (<div>
             <h1>Hi, { currentUser.name }!</h1>
+            <div>
+              <Game />
+            </div>
             <p>
               <FlatButton
                 onClick={ this.signOut.bind(this) }
