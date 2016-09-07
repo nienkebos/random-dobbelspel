@@ -29,6 +29,9 @@ class App extends Component {
         { authenticated ?
           (<div>
             <h1>Hi, { currentUser.name }!</h1>
+            <div>
+              <Game />
+            </div>
            <p>
               <FlatButton
                 onClick={ this.signOut.bind(this) }
@@ -40,34 +43,13 @@ class App extends Component {
     )
   }
 
-  renderBoard() {
-    return (
-      <div>
-        <h2>Game board</h2>
-		<Game />
-
-      </div>
-    )
-  }
 
   render() {
-    let signIn = true;
-
-    if (signIn == true) {
-      return(
-        <div>
-          <h2>Sign in</h2>
-          { this.renderSignIn()}
-        </div>
-      );
-    } else {
-      return(
-        <div>
-          <h2>Sign out</h2>
-          { this.renderBoard()}
-        </div>
-      );
-    }
+    return(
+      <div>
+        { this.renderSignIn()}
+      </div>
+    )
   }
 }
 
