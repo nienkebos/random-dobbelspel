@@ -19,19 +19,17 @@ class App extends Component {
     this.props.signOut()
   }
 
-  render() {
-    const { loading, authenticated, currentUser, dice } = this.props
+  renderSignIn() {
 
-    return(
+    const { loading, authenticated, currentUser } = this.props;
+
+    return (
       <div>
         { loading ? <Loader/> : null }
         { authenticated ?
           (<div>
             <h1>Hi, { currentUser.name }!</h1>
-            <div>
-              <Game />
-            </div>
-            <p>
+           <p>
               <FlatButton
                 onClick={ this.signOut.bind(this) }
                 label="Sign out"/>
@@ -39,7 +37,37 @@ class App extends Component {
           </div>) :
             <SignInOrUp/> }
       </div>
-    );
+    )
+  }
+
+  renderBoard() {
+    return (
+      <div>
+        <h2>Game board</h2>
+		<Game />
+
+      </div>
+    )
+  }
+
+  render() {
+    let signIn = true;
+
+    if (signIn == true) {
+      return(
+        <div>
+          <h2>Sign in</h2>
+          { this.renderSignIn()}
+        </div>
+      );
+    } else {
+      return(
+        <div>
+          <h2>Sign out</h2>
+          { this.renderBoard()}
+        </div>
+      );
+    }
   }
 }
 
