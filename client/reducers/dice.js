@@ -1,11 +1,10 @@
-import { CREATE_GAME } from '../actions/create-game'
+import { DICE_ROLLED } from '../actions/dice-rolled'
 
 export default function updateGame( state = [], { type, payload } ) {
   switch (type) {
-    case CREATE_GAME :
-      const eyes = '123456'.split('')
-      return eyes
-        .map((eyes) => ({ eyes: eyes }))
+    case DICE_ROLLED :
+
+      return payload.map((eyes) => ({ eyes: eyes }))
 
     default :
       return state

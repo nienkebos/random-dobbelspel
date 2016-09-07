@@ -9,13 +9,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const diceSchema = new Schema({
-  eyes: { type: String, required: true },
+  eyes: { type: Number, required: true },
 });
 
 const playerSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'user' },
   color: { type: String, required: false },
-  pairs: [String]
+  score: { type: Number, required: true, 'default': 0 }
 });
 
 const gameSchema = new Schema({
