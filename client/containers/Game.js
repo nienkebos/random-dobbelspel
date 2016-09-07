@@ -9,6 +9,8 @@ import Dice from '../components/Dice'
 
 // Material UI Components
 import { GridList } from 'material-ui/GridList';
+import RaisedButton from 'material-ui/RaisedButton'
+
 
 const styles = {
   root: {
@@ -22,10 +24,19 @@ const styles = {
     overflowY: 'auto',
     marginBottom: 0,
   },
-};
+}
+
+const buttonStyle = {
+  float: 'right',
+  marginLeft: '2rem',
+}
 
 class Game extends Component {
   componentDidMount() {
+    this.props.createGame()
+  }
+
+  rollAgain(){
     this.props.createGame()
   }
 
@@ -40,11 +51,29 @@ class Game extends Component {
     const { dice } = this.props
 
     return (
-      <div style={ styles.root }>
-        <GridList cellHeight={ 150 } cols={ 3 } style={ styles.gridList }>
-          { dice.map(this.renderDice.bind(this)) }
-        </GridList>
-      </div>
+      <div>
+        <div style={ styles.root }>
+          <GridList cellHeight={ 150 } cols={ 3 } style={ styles.gridList }>
+            { dice.map(this.renderDice.bind(this)) }
+          </GridList>
+          </div>
+
+          <div>
+            <RaisedButton
+              style={ buttonStyle }
+              onClick={ this.rollAgain.bind(this) }
+              label={ 'Dobbelen!' }
+              primary={true} />
+          </div>
+          <div>
+            <RaisedButton
+              style={ buttonStyle }
+              // onClick={ this.createGame }
+              label={ 'Ik durf niet meer...' }
+              primary={true} />
+              {/* Nieuwe functie voor schrijven */}
+          </div>
+        </div>
     )
   }
 }
@@ -57,6 +86,7 @@ const mapStateToProps = (state) => {
 
 Game.propTypes = {
   dice: PropTypes.array.isRequired,
+  createGame: PropTypes.func.isRequired,
 }
 
 export default connect(mapStateToProps, { createGame })(Game)
