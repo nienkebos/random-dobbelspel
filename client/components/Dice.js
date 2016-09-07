@@ -10,7 +10,7 @@ const style = {
     textAlign: 'center',
     display: 'inline-block',
   },
-  symbol: {
+  eyes: {
     fontSize: '3rem',
   }
 }
@@ -23,7 +23,7 @@ class Dice extends Component {
     return (
       <GridTile>
         <Paper style={ style.paper } zDepth={1}>
-          <h1 style={ style.eyes }></h1>
+          <h1 style={ style.eyes }>{eyes}</h1>
         </Paper>
       </GridTile>
     )
@@ -32,7 +32,7 @@ class Dice extends Component {
 
 Dice.propTypes = {
   index: PropTypes.number.isRequired,
-  eyes: PropTypes.string.isRequired,
+  eyes: PropTypes.number.isRequired,
 }
 
 export default Dice
