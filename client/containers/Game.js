@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import jQuery from 'jquery'
 
 // Actions
 import createGame from '../actions/create-game'
@@ -26,6 +27,14 @@ const styles = {
     overflowY: 'auto',
     marginBottom: 0,
   },
+  pussy: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    top: '-100%',
+    backgroundImage: "url('../assets/pussy.jpg')",
+    backgroundSize: '100%',
+  },
 }
 
 const buttonStyle = {
@@ -43,6 +52,10 @@ class Game extends Component {
     this.props.secondRoll(player)
   }
 
+  aPussy() {
+    jQuery('#pussy').slideDown(500);
+  }
+
   renderDice(dice, index) {
     return (
       <Dice key={ index }
@@ -55,6 +68,7 @@ class Game extends Component {
 
     return (
       <div>
+        <div id='pussy' style={ styles.pussy }></div>
         <div style={ styles.root }>
           <GridList cellHeight={ 150 } cols={ 3 } style={ styles.gridList }>
             { dice.map(this.renderDice.bind(this)) }
@@ -63,6 +77,7 @@ class Game extends Component {
           <div>
             <Scoreboard />
           </div>
+
           { player.turn == 3 ?
             <div>
               <RaisedButton
@@ -82,11 +97,12 @@ class Game extends Component {
           <div>
             <RaisedButton
               style={ buttonStyle }
-              // onClick={ this.createGame }
+              onClick={ this.aPussy.bind(this) }
               label={ 'I am a pussy...' }
               primary={true} />
               {/* Nieuwe functie voor schrijven */}
           </div>
+
         </div>
     )
   }
