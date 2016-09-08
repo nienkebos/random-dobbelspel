@@ -6,6 +6,7 @@ import createGame from '../actions/create-game'
 
 // Components
 import Dice from '../components/Dice'
+import Scoreboard from '../containers/Scoreboard'
 
 // Material UI Components
 import { GridList } from 'material-ui/GridList';
@@ -57,7 +58,9 @@ class Game extends Component {
             { dice.map(this.renderDice.bind(this)) }
           </GridList>
           </div>
-
+          <div>
+            <Scoreboard />
+          </div>
           <div>
             <RaisedButton
               style={ buttonStyle }

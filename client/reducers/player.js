@@ -5,9 +5,9 @@ export default function newScorePlayer( state = {}, {type, payload}) {
   switch (type) {
 
     case NEW_SCORE :
-      const {eyes, score} = payload
+      const {eyes, score, turn} = payload
 
-      return Object.assign({}, state, {score: score, eyes: eyes })
+      return Object.assign({}, state, {score: score, eyes: eyes, turn: turn })
 
     default :
       return state
