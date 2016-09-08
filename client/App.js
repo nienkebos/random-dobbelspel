@@ -12,7 +12,10 @@ import Loader from './components/Loader'
 // Material UI Components
 import FlatButton from 'material-ui/FlatButton'
 
-
+var divStyle = {
+    backgroundImage: "url('./assets/retro-background.svg')",
+    backgroundSize: "100%",
+};
 
 class App extends Component {
   signOut() {
@@ -24,12 +27,12 @@ class App extends Component {
     const { loading, authenticated, currentUser } = this.props;
 
     return (
-      <div>
+      <div style={divStyle}>
         { loading ? <Loader/> : null }
         { authenticated ?
           (<div>
             <h1>Hi, { currentUser.name }!</h1>
-            <div>
+            <div >
               <Game />
             </div>
            <p>

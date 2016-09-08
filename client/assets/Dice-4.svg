@@ -1,7 +1,16 @@
-<?xml version="1.0" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="557" height="557">
-<rect x="4" y="4" width="549" height="549" rx="68" fill="none" stroke="#000" stroke-width="7"/>
-<g stroke-dasharray="0,323" stroke-linecap="round">
-<path stroke="#740000" stroke-width="120" d="M117,117v325m323-2V115"/>
-<path stroke="#FF724C" stroke-width="110" d="M117,117v325m323-2V115"/>
-</g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="557px" height="557px" viewBox="0 0 557 557" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dice-4" transform="translate(4.000000, 4.000000)" stroke="#000000" stroke-width="7" fill="#FFFFFF">
+            <rect id="Rectangle-path" x="0" y="0" width="549" height="549" rx="68"></rect>
+        </g>
+        <circle id="Oval-Copy" stroke="#740000" stroke-width="5" fill="#FF724C" cx="439.115234" cy="115.115234" r="57.1152344"></circle>
+        <ellipse id="Oval-Copy-3" stroke="#740000" stroke-width="5" fill="#FF724C" cx="439.115234" cy="441.115234" rx="57.1152344" ry="57.1152344"></ellipse>
+        <circle id="Oval-Copy-2" stroke="#740000" stroke-width="5" fill="#FF724C" cx="117.115234" cy="115.115234" r="57.1152344"></circle>
+        <ellipse id="Oval-Copy-4" stroke="#740000" stroke-width="5" fill="#FF724C" cx="117.115234" cy="441.115234" rx="57.1152344" ry="57.1152344"></ellipse>
+    </g>
+</svg>
