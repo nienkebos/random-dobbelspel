@@ -4,6 +4,8 @@ import newScore from './new-score'
 
 export default function createGame(game) {
 
+  const turn = 1;
+
   const eyes = [];
 
   for (var i=0; i<6; ++i){
@@ -21,7 +23,7 @@ export default function createGame(game) {
   return dispatch => {
 
     dispatch(diceRolled(eyes))
-    dispatch(newScore(score,eyes))
+    dispatch(newScore(score,eyes,turn))
 
   }
 }
