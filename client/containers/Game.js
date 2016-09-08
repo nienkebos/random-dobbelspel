@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 // Actions
 import createGame from '../actions/create-game'
+import secondRoll from '../actions/second-roll'
 
 // Components
 import Dice from '../components/Dice'
@@ -37,8 +38,42 @@ class Game extends Component {
     this.props.createGame()
   }
 
-  rollAgain(){
-    this.props.createGame()
+  // secondRoll() {
+  //   const { player } = this.props
+  //
+  //   function turn(eyes) {
+  //     newTurn = eyes.map(function(nr){
+  //       if (nr == 1 || nr == 5) {
+  //       return nr
+  //       } else {
+  //       return Math.floor((Math.random()*6)+1)
+  //       }
+  //     });
+  //     return newTurn
+  //   }
+  //
+  //   function count(turn,num) {
+  //     var count = 0;
+  //     for(var i = 0; i < turn.length; ++i){
+  //         if(turn[i] == num)
+  //             count++;
+  //     }
+  //     return count;
+  //   }
+  //
+  //   function checkDead(old,nw) {
+  //     if (count(old,5) == count(nw,5) && count(old,1) == count(nw,1)) {
+  //       return true
+  //     } else {
+  //       return false
+  //     }
+  //   }
+  //
+  // }
+
+  rollAgain() {
+    const { player } = this.props
+    this.props.secondRoll(player)
   }
 
   renderDice(dice, index) {
@@ -84,12 +119,15 @@ class Game extends Component {
 const mapStateToProps = (state) => {
   return {
     dice: state.dice,
+    player: state.player,
   }
 }
 
 Game.propTypes = {
   dice: PropTypes.array.isRequired,
   createGame: PropTypes.func.isRequired,
+  secondRoll: PropTypes.func.isRequired,
+
 }
 
-export default connect(mapStateToProps, { createGame })(Game)
+export default connect(mapStateToProps, { createGame, secondRoll })(Game)
