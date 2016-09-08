@@ -77,7 +77,6 @@ class Dice extends Component {
     } else if (eyes == 6){
       numberStyle = style.paper6
     }
-    console.log(numberStyle);
     return (
       <GridTile>
         <Paper style={ numberStyle } zDepth={0}>

@@ -1,8 +1,8 @@
 export const NEW_SCORE = 'NEW_SCORE'
 
-export default function newScore(score) {
+export default function newScore(score,eyes) {
   return {
     type: NEW_SCORE,
-    payload: score,
+    payload: { score, eyes }
   }
 }

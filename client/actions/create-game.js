@@ -21,7 +21,7 @@ export default function createGame(game) {
   return dispatch => {
 
     dispatch(diceRolled(eyes))
-    dispatch(newScore(score))
+    dispatch(newScore(score,eyes))
 
   }
 }
