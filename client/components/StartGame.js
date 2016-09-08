@@ -39,24 +39,25 @@ class StartGame extends Component {
 
     return(
       <div>
-      { startGame == false ?
-      <div>
-        <h1>RANDOM DICE GAME</h1>
+        { startGame == false ?
         <div>
-          <RaisedButton
-          style={ buttonStyle }
-          onClick={ this.toggleStartGame.bind(this) }
-          label={ 'Peace man! Throw some dice!' }
-          primary={true} />
-        </div>
-      </div> :
-      <div>
-        <Game />
-      </div> }
+          <h1>DIE, DICE, DEAD</h1>
+          <div>
+            <RaisedButton
+            style={ buttonStyle }
+            onClick={ this.toggleStartGame.bind(this) }
+            label={ 'Peace man! Throw some dice!' }
+            primary={true} />
+          </div>
+        </div> :
+        <div>
+          <Game />
+        </div> }
       </div>
     )
   }
 }
+
 const mapStateToProps = (state) => {
   return {
     dice: state.dice,

@@ -70,7 +70,9 @@ class Game extends Component {
     return (
       <div>
         <div id='pussy' style={ styles.pussy }></div>
+        <h1>DIE, DICE, DEAD</h1>
         <div style={ styles.root }>
+
           <GridList cellHeight={ 150 } cols={ 3 } style={ styles.gridList }>
             { dice.map(this.renderDice.bind(this)) }
           </GridList>
@@ -95,6 +97,7 @@ class Game extends Component {
                 primary={true} />
             </div>
           }
+
           <div>
             <RaisedButton
               style={ buttonStyle }
