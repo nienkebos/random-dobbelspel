@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import jQuery from 'jquery'
 
 // Actions
 import createGame from '../actions/create-game'
@@ -26,6 +27,14 @@ const styles = {
     overflowY: 'auto',
     marginBottom: 0,
   },
+  pussy: {
+    width: '100%',
+    height: 100,
+    position: 'absolute',
+    top: -100,
+    backgroundImage: "url('../assets/pussy.jpg')",
+    backgroundSize: '100%',
+  },
 }
 
 const buttonStyle = {
@@ -38,42 +47,14 @@ class Game extends Component {
     this.props.createGame()
   }
 
-  // secondRoll() {
-  //   const { player } = this.props
-  //
-  //   function turn(eyes) {
-  //     newTurn = eyes.map(function(nr){
-  //       if (nr == 1 || nr == 5) {
-  //       return nr
-  //       } else {
-  //       return Math.floor((Math.random()*6)+1)
-  //       }
-  //     });
-  //     return newTurn
-  //   }
-  //
-  //   function count(turn,num) {
-  //     var count = 0;
-  //     for(var i = 0; i < turn.length; ++i){
-  //         if(turn[i] == num)
-  //             count++;
-  //     }
-  //     return count;
-  //   }
-  //
-  //   function checkDead(old,nw) {
-  //     if (count(old,5) == count(nw,5) && count(old,1) == count(nw,1)) {
-  //       return true
-  //     } else {
-  //       return false
-  //     }
-  //   }
-  //
-  // }
-
   rollAgain() {
     const { player } = this.props
     this.props.secondRoll(player)
+  }
+
+  aPussy() {
+    console.log('hoiii');
+    jQuery('#pussy').slideDown(100);
   }
 
   renderDice(dice, index) {
@@ -84,10 +65,11 @@ class Game extends Component {
   }
 
   render() {
-    const { dice } = this.props
+    const { dice, player } = this.props
 
     return (
       <div>
+        <div id='pussy' style={ styles.pussy }></div>
         <div style={ styles.root }>
           <GridList cellHeight={ 150 } cols={ 3 } style={ styles.gridList }>
             { dice.map(this.renderDice.bind(this)) }
@@ -96,21 +78,31 @@ class Game extends Component {
           <div>
             <Scoreboard />
           </div>
+
+          { player.turn == 3 ?
+            <div>
+              <RaisedButton
+                style={ buttonStyle }
+                // onClick={  }
+                label={ 'Next!' }
+                primary={true} />
+            </div> :
+            <div>
+              <RaisedButton
+                style={ buttonStyle }
+                onClick={ this.rollAgain.bind(this) }
+                label={ 'Dobbelen!' }
+                primary={true} />
+            </div>
+          }
           <div>
             <RaisedButton
               style={ buttonStyle }
-              onClick={ this.rollAgain.bind(this) }
-              label={ 'Dobbelen!' }
+              onClick={ this.aPussy.bind(this) }
+              label={ 'I am a pussy...' }
               primary={true} />
           </div>
-          <div>
-            <RaisedButton
-              style={ buttonStyle }
-              // onClick={ this.createGame }
-              label={ 'Ik durf niet meer...' }
-              primary={true} />
-              {/* Nieuwe functie voor schrijven */}
-          </div>
+
         </div>
     )
   }

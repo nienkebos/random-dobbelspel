@@ -18,28 +18,33 @@ console.log(player.eyes);
     }).reduce((x, y) => x + y, 0)
 
 
-  // function count(turn,num) {
-  //   var count = 0;
-  //   for(var i = 0; i < turn.length; ++i){
-  //       if(turn[i] == num)
-  //           count++;
-  //   }
-  //   return count;
-  // }
-  //
-  // function checkDead(old,nw) {
-  //   if (count(old,5) == count(nw,5) && count(old,1) == count(nw,1)) {
-  //     return true
-  //   } else {
-  //     return false
-  //   }
-  // }
+  function count(roll, num) {
+    var count = 0;
+    for(var i = 0; i < roll.length; ++i){
+        if(roll[i] == num)
+            count++;
+    }
+    return count;
+  }
+
+  function checkDead(old, nw) {
+    if (count(old, 5) == count(nw, 5) && count(old, 1) == count(nw, 1)) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+    const dead = checkDead(player.eyes, newEyes)
+    console.log(dead)
+
+    const newTurn = (player.turn + 1)
 
 
   return dispatch => {
 
     dispatch(diceRolled(newEyes))
-    dispatch(newScore(score, newEyes))
+    dispatch(newScore(score, newEyes, newTurn))
 
   }
 }

@@ -11,12 +11,11 @@ import headerStyle from '../styles/headers'
 
 class StartGame extends Component {
   render() {
-    // TODO: link to Game
     return(
       <div>
         <h1>Round 1</h1>
         <div>
-          <FlatButton label={ Game }/>
+          <FlatButton label={  }/>
 
         </div>
       </div>
