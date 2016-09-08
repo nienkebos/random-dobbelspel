@@ -11,6 +11,7 @@ const style = {
     display: 'inline-block',
     backgroundImage: "url('./assets/Dice-1.svg')",
     backgroundSize: '100%',
+    backgroundColor : 'transparent',
   },
   paper2: {
     height: 130,
@@ -20,6 +21,7 @@ const style = {
     display: 'inline-block',
     backgroundImage: "url('./assets/Dice-2.svg')",
     backgroundSize: '100%',
+    backgroundColor : 'transparent',
   },
   paper3: {
     height: 130,
@@ -29,6 +31,7 @@ const style = {
     display: 'inline-block',
     backgroundImage: "url('./assets/Dice-3.svg')",
     backgroundSize: '100%',
+    backgroundColor : 'transparent',
   },
   paper4: {
     height: 130,
@@ -38,6 +41,7 @@ const style = {
     display: 'inline-block',
     backgroundImage: "url('./assets/Dice-4.svg')",
     backgroundSize: '100%',
+    backgroundColor : 'transparent',
   },
   paper5: {
     height: 130,
@@ -47,6 +51,7 @@ const style = {
     display: 'inline-block',
     backgroundImage: "url('./assets/Dice-5.svg')",
     backgroundSize: '100%',
+    backgroundColor : 'transparent',
   },
   paper6: {
     height: 130,
@@ -56,6 +61,7 @@ const style = {
     display: 'inline-block',
     backgroundImage: "url('./assets/Dice-6.svg')",
     backgroundSize: '100%',
+    backgroundColor : 'transparent',
   },
 }
 
