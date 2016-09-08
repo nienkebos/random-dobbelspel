@@ -6,6 +6,8 @@ import signOut from './actions/sign-out-user'
 
 // Components/containers
 import Game from './containers/Game'
+import StartGame from './components/StartGame'
+
 import SignInOrUp from './containers/SignInOrUp'
 import Loader from './components/Loader'
 
@@ -22,7 +24,20 @@ class App extends Component {
     this.props.signOut()
   }
 
-  renderSignIn() {
+
+  renderGame() {
+    const { gameStarted, dice } = this.props
+    
+    if (!gameStarted) return <StartGame  />
+    return (
+      <div>
+        <Game  />
+      </div>
+    )
+  }
+
+
+  render() {
 
     const { loading, authenticated, currentUser } = this.props;
 
@@ -33,7 +48,7 @@ class App extends Component {
           (<div>
             <h1>Hi, { currentUser.name }!</h1>
             <div >
-              <Game />
+              { this.renderGame() }
             </div>
            <p>
               <FlatButton
@@ -41,19 +56,13 @@ class App extends Component {
                 label="Sign out"/>
             </p>
           </div>) :
-            <SignInOrUp/> }
+            <SignInOrUp /> }
       </div>
     )
   }
 
 
-  render() {
-    return(
-      <div>
-        { this.renderSignIn()}
-      </div>
-    )
-  }
+
 }
 
 const mapStateToProps = (state) => {
@@ -61,6 +70,7 @@ const mapStateToProps = (state) => {
     loading: state.loading,
     authenticated: state.authenticated,
     currentUser: state.currentUser,
+    gameStarted: (state.dice.length > 0),
   }
 }
 
