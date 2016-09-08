@@ -3,6 +3,7 @@ import currentUser from './currentUser'
 import dice from './dice'
 import formErrors from './formErrors'
 import loading from './loading'
+import player from  './player'
 
 module.exports = {
   authenticated,
@@ -10,6 +11,7 @@ module.exports = {
   dice,
   formErrors,
   loading,
+  player,
 }
 
 // {
