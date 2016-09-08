@@ -9,8 +9,8 @@ const style = {
     margin: 10,
     textAlign: 'center',
     display: 'inline-block',
-    background: "url('./assets/Dice-1.svg')",
-    backgroundSize: '130px',
+    backgroundImage: "url('./assets/Dice-1.svg')",
+    backgroundSize: '100%',
   },
   paper2: {
     height: 130,
@@ -18,8 +18,8 @@ const style = {
     margin: 10,
     textAlign: 'center',
     display: 'inline-block',
-    background: "url('./assets/Dice-2.svg')",
-    backgroundSize: '130px',
+    backgroundImage: "url('./assets/Dice-2.svg')",
+    backgroundSize: '100%',
   },
   paper3: {
     height: 130,
@@ -27,8 +27,8 @@ const style = {
     margin: 10,
     textAlign: 'center',
     display: 'inline-block',
-    background: "url('./assets/Dice-3.svg')",
-    backgroundSize: '130px',
+    backgroundImage: "url('./assets/Dice-3.svg')",
+    backgroundSize: '100%',
   },
   paper4: {
     height: 130,
@@ -36,8 +36,8 @@ const style = {
     margin: 10,
     textAlign: 'center',
     display: 'inline-block',
-    background: "url('./assets/Dice-4.svg')",
-    backgroundSize: '130px',
+    backgroundImage: "url('./assets/Dice-4.svg')",
+    backgroundSize: '100%',
   },
   paper5: {
     height: 130,
@@ -45,8 +45,8 @@ const style = {
     margin: 10,
     textAlign: 'center',
     display: 'inline-block',
-    background: "url('./assets/Dice-5.svg')",
-    backgroundSize: '130px',
+    backgroundImage: "url('./assets/Dice-5.svg')",
+    backgroundSize: '100%',
   },
   paper6: {
     height: 130,
@@ -54,13 +54,9 @@ const style = {
     margin: 10,
     textAlign: 'center',
     display: 'inline-block',
-    background: "url('./assets/Dice-6.svg')",
-    backgroundSize: '130px',
+    backgroundImage: "url('./assets/Dice-6.svg')",
+    backgroundSize: '100%',
   },
-  eyes: {
-    fontSize: '3rem',
-
-  }
 }
 
 class Dice extends Component {
@@ -84,7 +80,7 @@ class Dice extends Component {
     console.log(numberStyle);
     return (
       <GridTile>
-        <Paper style={ numberStyle } zDepth={1}>
+        <Paper style={ numberStyle } zDepth={0}>
           <h1 style={ style.eyes }></h1>
         </Paper>
       </GridTile>
