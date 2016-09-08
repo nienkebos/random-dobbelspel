@@ -29,9 +29,9 @@ const styles = {
   },
   pussy: {
     width: '100%',
-    height: '100%',
+    height: 100,
     position: 'absolute',
-    top: '-100%',
+    top: -100,
     backgroundImage: "url('../assets/pussy.jpg')",
     backgroundSize: '100%',
   },
@@ -53,7 +53,8 @@ class Game extends Component {
   }
 
   aPussy() {
-    jQuery('#pussy').slideDown(500);
+    console.log('hoiii');
+    jQuery('#pussy').slideDown(100);
   }
 
   renderDice(dice, index) {
@@ -100,7 +101,6 @@ class Game extends Component {
               onClick={ this.aPussy.bind(this) }
               label={ 'I am a pussy...' }
               primary={true} />
-              {/* Nieuwe functie voor schrijven */}
           </div>
 
         </div>
