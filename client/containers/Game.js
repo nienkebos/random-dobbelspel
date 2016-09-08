@@ -119,7 +119,6 @@ Game.propTypes = {
   dice: PropTypes.array.isRequired,
   createGame: PropTypes.func.isRequired,
   secondRoll: PropTypes.func.isRequired,
-
 }
 
 export default connect(mapStateToProps, { createGame, secondRoll })(Game)
